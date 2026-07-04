@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+/* ── Keyframe animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulseCTA {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.55); }
+  60%       { box-shadow: 0 0 0 16px rgba(14, 165, 233, 0); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Hero entrance helpers ── */
+.animate-fade-up   { opacity: 0; animation: fadeUp  0.8s ease forwards; }
+.animate-fade-in   { opacity: 0; animation: fadeIn  0.8s ease forwards; }
+.animate-scale-in  { opacity: 0; animation: scaleIn 0.6s ease forwards; }
+.animate-slide-left  { opacity: 0; animation: slideInLeft  0.8s ease forwards; }
+.animate-slide-right { opacity: 0; animation: slideInRight 0.8s ease forwards; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* ── Pulsing CTA glow ── */
+.pulse-cta { animation: pulseCTA 2.2s ease-in-out infinite; }
+
+/* ── Scroll-reveal classes ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* stagger siblings automatically */
+.reveal:nth-child(2), .reveal-scale:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3), .reveal-scale:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4), .reveal-scale:nth-child(4) { transition-delay: 0.3s; }
+.reveal:nth-child(5), .reveal-scale:nth-child(5) { transition-delay: 0.4s; }
+.reveal:nth-child(6), .reveal-scale:nth-child(6) { transition-delay: 0.5s; }
