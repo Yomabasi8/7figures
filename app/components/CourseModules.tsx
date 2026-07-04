@@ -86,13 +86,13 @@ export default function CourseModules() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14 reveal">
-          <span className="inline-block bg-sky-100 text-sky-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Course Curriculum
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-4">
             6 Modules. One Transformation.
           </h2>
-          <p className="text-slate-600 text-lg max-w-xl mx-auto">
+          <p className="text-neutral-600 text-lg max-w-xl mx-auto">
             Every module is designed to move you — step by step — from where
             you are right now to signing your first premium client.
           </p>
@@ -101,29 +101,29 @@ export default function CourseModules() {
         {/* Module accordion */}
         <div className="space-y-3">
           {modules.map((mod, i) => (
+            <div key={i} className="reveal">
             <div
-              key={i}
-              className={`reveal border rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                 open === i
-                  ? "border-sky-400 shadow-lg shadow-sky-100"
-                  : "border-slate-200 hover:border-sky-200"
+                  ? "border-red-400 shadow-lg shadow-red-100"
+                  : "border-neutral-200 hover:border-red-200"
               }`}
             >
               <button
-                className="w-full flex items-center gap-4 p-5 text-left hover:bg-sky-50/50 transition-colors group"
+                className="w-full flex items-center gap-4 p-5 text-left hover:bg-red-50/50 transition-colors group"
                 onClick={() => setOpen(open === i ? null : i)}
               >
-                <span className="text-sky-500 font-extrabold text-lg w-8 shrink-0">
+                <span className="text-red-500 font-extrabold text-lg w-8 shrink-0">
                   {mod.num}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="font-bold text-slate-900 group-hover:text-sky-700 transition-colors text-sm sm:text-base">
+                  <p className="font-bold text-neutral-900 group-hover:text-red-700 transition-colors text-sm sm:text-base">
                     {mod.title}
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">{mod.duration}</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">{mod.duration}</p>
                 </div>
                 <svg
-                  className={`w-5 h-5 text-sky-500 transition-transform duration-300 shrink-0 ${
+                  className={`w-5 h-5 text-red-500 transition-transform duration-300 shrink-0 ${
                     open === i ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -144,16 +144,16 @@ export default function CourseModules() {
                   open === i ? "max-h-[500px]" : "max-h-0"
                 }`}
               >
-                <div className="px-5 pb-6 border-t border-sky-100 pt-4">
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                <div className="px-5 pb-6 border-t border-red-100 pt-4">
+                  <p className="text-neutral-600 text-sm leading-relaxed mb-4">
                     {mod.desc}
                   </p>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {mod.lessons.map((lesson, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-600">
-                        <span className="w-4 h-4 rounded-full bg-sky-100 flex items-center justify-center shrink-0">
+                      <div key={j} className="flex items-center gap-2 text-sm text-neutral-600">
+                        <span className="w-4 h-4 rounded-full bg-red-100 flex items-center justify-center shrink-0">
                           <svg
-                            className="w-2.5 h-2.5 text-sky-600"
+                            className="w-2.5 h-2.5 text-red-600"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -172,6 +172,7 @@ export default function CourseModules() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           ))}
         </div>

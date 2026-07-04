@@ -42,7 +42,7 @@ function Counter({ end, suffix }: { end: number; suffix: string }) {
   }, [end]);
 
   return (
-    <div ref={ref} className="text-3xl sm:text-4xl font-extrabold text-sky-600">
+    <div ref={ref} className="text-3xl sm:text-4xl font-extrabold text-red-600">
       {count}
       {suffix}
     </div>
@@ -51,13 +51,13 @@ function Counter({ end, suffix }: { end: number; suffix: string }) {
 
 export default function SocialProofBar() {
   return (
-    <section className="py-14 bg-white border-b border-sky-100">
+    <section className="py-14 bg-white border-b border-red-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s, i) => (
             <div key={i} className="group">
               <Counter end={s.end} suffix={s.suffix} />
-              <p className="text-slate-500 text-sm font-medium mt-1">{s.label}</p>
+              <p className="text-neutral-500 text-sm font-medium mt-1">{s.label}</p>
             </div>
           ))}
         </div>

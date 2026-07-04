@@ -40,38 +40,38 @@ export default function FaqSection() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-14 reveal">
-          <span className="inline-block bg-sky-100 text-sky-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-4">
             Got Questions?{" "}
-            <span className="text-sky-600">We&apos;ve Got Answers.</span>
+            <span className="text-red-600">We&apos;ve Got Answers.</span>
           </h2>
         </div>
 
         {/* Accordion */}
         <div className="space-y-3">
           {faqs.map((faq, i) => (
+            <div key={i} className="reveal">
             <div
-              key={i}
-              className={`reveal border rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                 open === i
-                  ? "border-sky-400 shadow-md shadow-sky-100"
-                  : "border-slate-200 hover:border-sky-200"
+                  ? "border-red-400 shadow-md shadow-red-100"
+                  : "border-neutral-200 hover:border-red-200"
               }`}
             >
               <button
-                className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-sky-50/50 transition-colors"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-red-50/50 transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
               >
-                <span className="font-semibold text-slate-900 text-sm sm:text-base">
+                <span className="font-semibold text-neutral-900 text-sm sm:text-base">
                   {faq.q}
                 </span>
                 <span
                   className={`shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                     open === i
-                      ? "border-sky-500 bg-sky-500 text-white"
-                      : "border-slate-300 text-slate-400"
+                      ? "border-red-500 bg-red-500 text-white"
+                      : "border-neutral-300 text-neutral-400"
                   }`}
                 >
                   <svg
@@ -97,22 +97,23 @@ export default function FaqSection() {
                   open === i ? "max-h-64" : "max-h-0"
                 }`}
               >
-                <div className="px-5 pb-5 border-t border-sky-100 pt-4">
-                  <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                <div className="px-5 pb-5 border-t border-red-100 pt-4">
+                  <p className="text-neutral-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
               </div>
+            </div>
             </div>
           ))}
         </div>
 
         {/* Nudge to CTA */}
         <div className="mt-12 text-center reveal">
-          <p className="text-slate-500 text-sm mb-4">
+          <p className="text-neutral-500 text-sm mb-4">
             Still have questions? Join now and ask inside our private community.
           </p>
           <a
             href="#pricing"
-            className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-sky-200"
+            className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-red-200"
           >
             GET ACCESS NOW — ₦17,999
           </a>
