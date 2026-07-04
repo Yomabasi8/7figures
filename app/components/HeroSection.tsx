@@ -74,14 +74,15 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
-            Turn Your{" "}
-            <span className="text-red-400">Writing Skills</span> Into a{" "}
+          <h1 className="animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
+            How I Went From Earning{" "}
+            <span className="text-red-400">₦31,000</span> as a Struggling
+            Teacher to Making{" "}
             <span className="relative inline-block">
-              <span className="text-amber-400">7-Figure Income</span>
+              <span className="text-amber-400">8 Figures Online</span>
               <span className="absolute -bottom-1 left-0 right-0 h-1 bg-amber-400/40 rounded-full" />
             </span>{" "}
-            Without Showing Your Face
+            With a Hidden Skill Most Nigerians Don&apos;t Know Exists
           </h1>
 
           {/* Subheadline */}
