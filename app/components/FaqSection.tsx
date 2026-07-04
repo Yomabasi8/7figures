@@ -4,7 +4,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Who is this course for?",
-    a: "This masterclass is designed for underpaid professionals (like school teachers), ambitious undergraduates, and general freelance writers who want to break free from low-paying gigs and tap into a high-income digital skill. It's perfect for anyone who wants to build a profitable online income entirely behind the scenes — without becoming an influencer or showing their face.",
+    a: "This masterclass is designed for underpaid professionals (like school teachers), ambitious undergraduates, and general freelance writers who want to break free from low-paying gigs and tap into a high-income digital skill. It's perfect for anyone who wants to build a profitable online income entirely behind the scenes, without becoming an influencer or showing their face.",
   },
   {
     q: "How long will I have access?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Do I need a laptop?",
-    a: "While you can easily watch all the video lessons and access the community on your mobile phone, having a laptop or computer is highly recommended for the actual writing, editing, and client management processes — to ensure you deliver the highest professional quality to your clients. But you can absolutely start with your phone, earn your first income, and then get yourself a laptop!",
+    a: "While you can easily watch all the video lessons and access the community on your mobile phone, having a laptop or computer is highly recommended for the actual writing, editing, and client management processes, to ensure you deliver the highest professional quality to your clients. But you can absolutely start with your phone, earn your first income, and then get yourself a laptop!",
   },
   {
     q: "Is there a community?",
@@ -115,7 +115,7 @@ export default function FaqSection() {
             href="#pricing"
             className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-red-200"
           >
-            GET ACCESS NOW — ₦17,999
+            GET ACCESS NOW FOR ₦17,999
           </a>
         </div>
       </div>
