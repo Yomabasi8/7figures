@@ -59,7 +59,7 @@ body {
 .pulse-cta { animation: pulseCTA 2.2s ease-in-out infinite; }
 
 /* ── Infinite scrolling ticker ── */
-.animate-ticker { animation: ticker 50s linear infinite; }
+.animate-ticker { animation: ticker 160s linear infinite; }
 .animate-ticker:hover { animation-play-state: paused; }
 
 /* ── Scroll-reveal classes ── */
