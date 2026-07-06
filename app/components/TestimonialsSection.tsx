@@ -122,15 +122,17 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Infinite scrolling testimonial strip */}
+      {/* Testimonial strip: static vertical stack on mobile, infinite scrolling marquee from sm up */}
       <div className="reveal">
-        <div className="flex w-max gap-6 px-4 sm:px-6 animate-ticker">
+        <div className="flex flex-col items-center sm:items-start sm:flex-row w-full sm:w-max gap-6 px-4 sm:px-6 sm:animate-ticker">
           {testimonials.map((item, i) => (
             <TestimonialCard key={`a-${i}`} item={item} />
           ))}
-          {testimonials.map((item, i) => (
-            <TestimonialCard key={`b-${i}`} item={item} hidden />
-          ))}
+          <div className="hidden sm:contents">
+            {testimonials.map((item, i) => (
+              <TestimonialCard key={`b-${i}`} item={item} hidden />
+            ))}
+          </div>
         </div>
       </div>
     </section>

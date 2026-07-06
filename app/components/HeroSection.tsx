@@ -111,8 +111,8 @@ export default function HeroSection() {
               Testimonial screenshot of this student who made ₦120k in two
               weeks, starting as an absolute beginner.
             </p>
-            <div className="flex items-start justify-center gap-3 sm:gap-5">
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[150px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 sm:gap-5">
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[240px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
                 <Image
                   src="/Images/student-120k-2-weeks.jpg"
                   alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
@@ -121,7 +121,7 @@ export default function HeroSection() {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[150px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[240px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
                 <Image
                   src="/Images/student-150k-2-weeks.jpg"
                   alt="Student testimonial screenshot: ₦150k earned in two weeks"
