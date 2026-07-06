@@ -2,8 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { end: 500, suffix: "+", label: "Students Enrolled" },
-  { end: 200, suffix: "+", label: "Scripts Written by Alumni" },
+  { end: 500, suffix: "+", label: "Scripts Written by Alumni" },
   { end: 14, suffix: " Days", label: "To Complete the Program" },
   { end: 6, suffix: "", label: "Power-Packed Modules" },
 ];
@@ -53,7 +52,7 @@ export default function SocialProofBar() {
   return (
     <section className="py-14 bg-white border-b border-red-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-3 gap-8 text-center">
           {stats.map((s, i) => (
             <div key={i} className="group">
               <Counter end={s.end} suffix={s.suffix} />

@@ -1,17 +1,9 @@
 const outcomes = [
   "Master the exact script structure that makes YouTube creators pay premium rates",
-  "Build a compelling portfolio that attracts international clients — from absolute scratch",
+  "Build a compelling portfolio that attracts international clients",
   "Use our direct outreach system to land your first paying client in 30–45 days",
-  "Price your services confidently at ₦150,000–₦800,000+ per month",
   "Work from your phone or laptop, from anywhere in the world",
   "Escape low-paying gigs permanently and command what you&apos;re truly worth",
-];
-
-const metrics = [
-  { label: "Avg. Script Rate", value: "$200–$1,500" },
-  { label: "Market Demand", value: "Exploding" },
-  { label: "Competition Level", value: "Very Low" },
-  { label: "Tech Required", value: "Almost None" },
 ];
 
 export default function SolutionSection() {
@@ -58,32 +50,21 @@ export default function SolutionSection() {
             </ul>
           </div>
 
-          {/* Right: visual card */}
-          <div className="reveal-right">
-            <div className="relative bg-gradient-to-br from-red-600 to-red-800 rounded-3xl p-8 text-white overflow-hidden">
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full" />
-              <div className="relative z-10">
-                <div className="text-6xl mb-4">✍️</div>
-                <h3 className="text-2xl font-extrabold mb-3 leading-snug">
-                  One Skill.
-                  <br />
-                  Unlimited Income.
-                </h3>
-                <p className="text-red-100 text-sm leading-relaxed mb-6">
-                  YouTube creators worldwide are desperately searching for
-                  skilled scriptwriters. The demand is massive, the competition
-                  is low, and the pay is extraordinary.
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  {metrics.map((m) => (
-                    <div key={m.label} className="bg-white/10 rounded-xl p-3">
-                      <p className="text-red-200 text-xs mb-0.5">{m.label}</p>
-                      <p className="font-bold text-white text-sm">{m.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          {/* Right: testimonial video */}
+          <div className="reveal-right flex flex-col items-center">
+            <p className="mb-5 text-neutral-900 text-base font-bold max-w-[280px] leading-relaxed">
+              Listen to <span className="text-red-600">Eno</span> share how he
+              went from <span className="text-red-600">zero to 3M</span> in{" "}
+              <span className="text-red-600">7 months</span> as a student.
+            </p>
+            <div className="relative w-full max-w-[280px] aspect-[9/16] rounded-3xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-black">
+              <video
+                src="/Videos/enobasi-testimonial.mp4"
+                controls
+                preload="metadata"
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

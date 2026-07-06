@@ -1,44 +1,6 @@
-"use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const DEADLINE = new Date("2026-07-07T23:59:59");
-
-function pad(n: number) {
-  return String(n).padStart(2, "0");
-}
-
 export default function HeroSection() {
-  const [time, setTime] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const tick = () => {
-      const diff = DEADLINE.getTime() - Date.now();
-      if (diff <= 0) {
-        setTime({ days: 0, hours: 0, mins: 0, secs: 0 });
-        return;
-      }
-      setTime({
-        days: Math.floor(diff / 86_400_000),
-        hours: Math.floor((diff % 86_400_000) / 3_600_000),
-        mins: Math.floor((diff % 3_600_000) / 60_000),
-        secs: Math.floor((diff % 60_000) / 1_000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const units = [
-    { label: "Days", value: time.days },
-    { label: "Hours", value: time.hours },
-    { label: "Mins", value: time.mins },
-    { label: "Secs", value: time.secs },
-  ];
-
   return (
     <section className="relative flex flex-col overflow-hidden bg-black pb-24">
       {/* Base vignette: soft red glow fading down into black */}
@@ -75,66 +37,19 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1 className="animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
-            How I Went From Earning{" "}
-            <span className="text-red-400">₦31,000</span> as a Struggling
-            Teacher to Making{" "}
-            <span className="relative inline-block">
-              <span className="text-amber-400">8 Figures Online</span>
-              <span className="absolute -bottom-1 left-0 right-0 h-1 bg-amber-400/40 rounded-full" />
-            </span>{" "}
-            With a Hidden Skill Most Nigerians Don&apos;t Know Exists
+            How I Went From a{" "}
+            <span className="text-white italic underline">₦31,000</span> Salary as a Teacher
+            to Making{" "}
+            <span className="text-amber-400 underline">14 million+ in 1 Year</span>{" "}
+            With a Simple Writing Skill Most Nigerians Don&apos;t Know Exists!
           </h1>
 
           {/* Subheadline */}
           <p className="animate-fade-up delay-200 text-neutral-300 text-lg sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            The complete step-by-step masterclass that teaches you how to write
-            high-paying YouTube scripts, command premium international rates,
-            and land global clients, entirely from your laptop or phone.
+            And How You Can Use It to Earn Massively Online Without Showing
+            Your Face, Creating Content, or Starting a Complicated Digital
+            Business.
           </p>
-
-          {/* Bullets */}
-          <div className="animate-fade-up delay-300 flex flex-wrap justify-center gap-3 mb-10">
-            {[
-              "No prior experience needed",
-              "No face-showing required",
-              "Works from your smartphone",
-            ].map((b) => (
-              <div
-                key={b}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm font-medium"
-              >
-                {b}
-              </div>
-            ))}
-          </div>
-
-          {/* Countdown */}
-          <div className="animate-fade-up delay-400 mb-10">
-            <p className="text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
-              ⏰ Early Bird Price Expires In:
-            </p>
-            {mounted && (
-              <div className="flex items-center justify-center gap-2 sm:gap-4">
-                {units.map(({ label, value }, i) => (
-                  <div key={label} className="flex items-center gap-2 sm:gap-4">
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-3 sm:p-4 min-w-[60px] sm:min-w-[80px] text-center">
-                      <div className="text-3xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">
-                        {pad(value)}
-                      </div>
-                      <div className="text-red-300 text-[10px] font-bold uppercase tracking-widest mt-1.5">
-                        {label}
-                      </div>
-                    </div>
-                    {i < 3 && (
-                      <span className="text-red-300 text-2xl font-extrabold leading-none">
-                        :
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
 
           {/* Price + CTA */}
           <div id="hero-cta" className="animate-fade-up delay-500">
