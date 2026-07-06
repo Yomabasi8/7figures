@@ -51,6 +51,25 @@ export default function HeroSection() {
             Business.
           </p>
 
+          {/* Video placeholder */}
+          <div className="animate-fade-up delay-300 mb-8 max-w-md mx-auto aspect-video bg-white/5 rounded-2xl border-2 border-dashed border-white/20 flex flex-col items-center justify-center gap-2 text-neutral-400">
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="text-sm font-medium">Video coming soon</span>
+          </div>
+
           {/* Price + CTA */}
           <div id="hero-cta" className="animate-fade-up delay-500">
             <div className="flex items-center justify-center gap-3 mb-3">
@@ -85,19 +104,33 @@ export default function HeroSection() {
               </svg>
             </a>
           </div>
-        </div>
 
-        {/* Flyer visual — big closing visual, bleeding past the section edge */}
-        <div className="animate-scale-in delay-500 relative mt-16 max-w-lg mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-red-950/60 ring-1 ring-white/10">
-            <Image
-              src="/Images/youtube-scriptwriting-masterclass.png"
-              alt="The 7-Figure YouTube Scriptwriting Masterclass"
-              width={1080}
-              height={1350}
-              priority
-              className="w-full h-auto"
-            />
+          {/* Testimonial screenshots */}
+          <div className="animate-fade-up delay-600 mt-10">
+            <p className="text-neutral-400 text-sm mb-3">
+              Testimonial screenshot of this student who made ₦120k in two
+              weeks, starting as an absolute beginner.
+            </p>
+            <div className="flex items-start justify-center gap-3 sm:gap-5">
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[150px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
+                <Image
+                  src="/Images/student-120k-2-weeks.jpg"
+                  alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
+                  width={499}
+                  height={1080}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[150px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
+                <Image
+                  src="/Images/student-150k-2-weeks.jpg"
+                  alt="Student testimonial screenshot: ₦150k earned in two weeks"
+                  width={803}
+                  height={1080}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

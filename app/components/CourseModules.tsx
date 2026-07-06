@@ -16,9 +16,9 @@ const modules = [
   },
   {
     num: "02",
-    title: "Script Anatomy — What Makes Viewers Stay",
+    title: "Script Anatomy: What Makes Viewers Stay",
     duration: "~1 hour",
-    desc: "Break down the science of high-retention scripts. Learn the exact structure top YouTube creators pay thousands for — and how to replicate it even as a complete beginner with no formal training.",
+    desc: "Break down the science of high-retention scripts. Learn the exact structure top YouTube creators pay thousands for, and how to replicate it even as a complete beginner with no formal training.",
     lessons: [
       "Anatomy of a viral YouTube video",
       "The 4-part retention formula",
@@ -28,7 +28,7 @@ const modules = [
   },
   {
     num: "03",
-    title: "The Hook Factory — Stop the Scroll",
+    title: "The Hook Factory: Stop the Scroll",
     duration: "~1.5 hours",
     desc: "Master the art of writing irresistible YouTube hooks using 12 proven formulas used by channels with millions of subscribers. A powerful hook is the single most valuable skill in your scriptwriting toolkit.",
     lessons: [
@@ -54,7 +54,7 @@ const modules = [
     num: "05",
     title: "The Direct Outreach Blueprint",
     duration: "~2 hours",
-    desc: "Use our proven cold DM and email templates to find, pitch, and close high-ticket YouTube creators — no portfolio, no prior credits, and no experience required. This single module has helped students land their first international client.",
+    desc: "Use our proven cold DM and email templates to find, pitch, and close high-ticket YouTube creators, no portfolio, no prior credits, and no experience required. This single module has helped students land their first international client.",
     lessons: [
       "Where to find premium clients online",
       "Cold DM templates that get real responses",
@@ -65,7 +65,7 @@ const modules = [
   },
   {
     num: "06",
-    title: "Scale to 7 Figures — Systems & Growth",
+    title: "How to use AI as your Co-writer and 5x your results!",
     duration: "~1.5 hours",
     desc: "Build automated workflows, confidently raise your rates, and create recurring client relationships that generate consistent 6–7 figure monthly income. Turn your freelance hustle into a scalable business.",
     lessons: [
@@ -93,7 +93,7 @@ export default function CourseModules() {
             6 Modules. One Transformation.
           </h2>
           <p className="text-neutral-600 text-lg max-w-xl mx-auto">
-            Every module is designed to move you — step by step — from where
+            Every module is designed to move you, step by step, from where
             you are right now to signing your first premium client.
           </p>
         </div>
@@ -176,6 +176,11 @@ export default function CourseModules() {
             </div>
           ))}
         </div>
+
+        {/* WhatsApp community callout */}
+        <p className="reveal mt-8 text-neutral-500 text-sm text-center font-bold">
+          Get instant access to our active WhatsApp community the moment you register, track your progress and get real support along the way.
+        </p>
       </div>
     </section>
   );

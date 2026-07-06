@@ -27,14 +27,15 @@ export default function FinalCTA() {
             Your Time Is Now
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
-            Your Scriptwriting Career
+            You&apos;ve Seen The Proof
             <br />
-            <span className="text-red-300">Starts With One Decision.</span>
+            <span className="text-red-300">Now Make The Decision</span>
           </h2>
           <p className="text-neutral-400 text-base sm:text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-            Creators worldwide are hiring right now. Every day you wait is a
-            client, a paycheck, and a step toward financial freedom handed to
-            someone else.
+            You have seen the breakdown and the results showing how ordinary
+            Nigerians like you have changed their financial story with this
+            single skill. It is up to you NOW to take the decision that can
+            change your life too.
           </p>
 
           <a

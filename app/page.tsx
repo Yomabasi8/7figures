@@ -5,6 +5,7 @@ import ProblemSection from "./components/ProblemSection";
 import OpportunitySection from "./components/OpportunitySection";
 import SolutionSection from "./components/SolutionSection";
 import WhoIsItFor from "./components/WhoIsItFor";
+import OgeTestimonial from "./components/OgeTestimonial";
 import CourseModules from "./components/CourseModules";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
@@ -24,9 +25,10 @@ export default function Home() {
         <ProblemSection />
         <OpportunitySection />
         <SolutionSection />
-        <WhoIsItFor />
-        <CourseModules />
         <TestimonialsSection />
+        <WhoIsItFor />
+        <OgeTestimonial />
+        <CourseModules />
         <PricingSection />
         <FinalCTA />
       </main>
