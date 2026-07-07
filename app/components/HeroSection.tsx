@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col overflow-hidden bg-black pb-24">
+    <section className="relative flex flex-col overflow-hidden bg-black pb-10">
       {/* Base vignette: soft red glow fading down into black */}
       <div
         className="absolute inset-0"
@@ -124,10 +124,10 @@ export default function HeroSection() {
             </div>
             <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-[380px] md:max-w-[460px] lg:max-w-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
               <Image
-                src="/Images/student-150k-2-weeks.jpg"
-                alt="Student testimonial screenshot: ₦150k earned in two weeks"
-                width={803}
-                height={1080}
+                src="/Images/student-1.5m-cyrus.jpg"
+                alt="Student testimonial screenshot: Cyrus's student receiving ₦1.5m in scriptwriting income"
+                width={571}
+                height={297}
                 className="w-full h-auto"
               />
             </div>

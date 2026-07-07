@@ -18,10 +18,10 @@ const problems = [
 
 export default function ProblemSection() {
   return (
-    <section id="about" className="py-20 bg-neutral-50">
+    <section id="about" className="py-12 sm:py-20 bg-neutral-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-14 reveal">
+        <div className="text-center mb-8 sm:mb-14 reveal">
           <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Does This Sound Familiar?
           </span>

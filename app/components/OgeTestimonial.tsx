@@ -1,6 +1,6 @@
 export default function OgeTestimonial() {
   return (
-    <section className="relative py-24 bg-neutral-950 overflow-hidden">
+    <section className="relative py-14 sm:py-24 bg-neutral-950 overflow-hidden">
       {/* Cinematic red spotlight glow */}
       <div
         className="absolute inset-0"

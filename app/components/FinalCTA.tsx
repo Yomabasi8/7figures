@@ -1,6 +1,6 @@
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-14 sm:py-24 bg-black relative overflow-hidden">
       {/* Base vignette: soft red glow fading down into black */}
       <div
         className="absolute inset-0"

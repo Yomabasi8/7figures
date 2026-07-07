@@ -8,7 +8,7 @@ const audiences = [
 
 export default function WhoIsItFor() {
   return (
-    <section className="py-20 bg-red-50 relative overflow-hidden">
+    <section className="py-12 sm:py-20 bg-red-50 relative overflow-hidden">
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-[0.5] pointer-events-none"
@@ -24,7 +24,7 @@ export default function WhoIsItFor() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-14 reveal">
+        <div className="text-center mb-8 sm:mb-14 reveal">
           <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Is This For You?
           </span>
@@ -39,11 +39,11 @@ export default function WhoIsItFor() {
         </div>
 
         {/* Audience pills */}
-        <div className="reveal flex flex-wrap justify-center gap-3 mb-8">
+        <div className="reveal flex flex-col sm:flex-row sm:flex-wrap items-center sm:justify-center gap-3">
           {audiences.map((a, i) => (
             <span
               key={i}
-              className="bg-white text-neutral-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full border-2 border-red-200 hover:border-red-400 hover:shadow-lg hover:shadow-red-100/60 transition-all duration-300"
+              className="w-full sm:w-auto max-w-xs sm:max-w-none text-center bg-white text-neutral-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full border-2 border-red-200 hover:border-red-400 hover:shadow-lg hover:shadow-red-100/60 transition-all duration-300"
             >
               {a}
             </span>

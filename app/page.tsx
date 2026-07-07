@@ -1,6 +1,6 @@
+import AnnouncementBar from "./components/AnnouncementBar";
 import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
-import SocialProofBar from "./components/SocialProofBar";
 import ProblemSection from "./components/ProblemSection";
 import OpportunitySection from "./components/OpportunitySection";
 import SolutionSection from "./components/SolutionSection";
@@ -18,10 +18,10 @@ export default function Home() {
   return (
     <>
       <ScrollReveal />
+      <AnnouncementBar />
       <NavBar />
       <main>
         <HeroSection />
-        <SocialProofBar />
         <ProblemSection />
         <OpportunitySection />
         <SolutionSection />

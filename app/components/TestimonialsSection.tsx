@@ -2,17 +2,47 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 
-type TestimonialItem =
-  | { type: "image"; src: string; width: number; height: number; alt: string }
-  | { type: "video"; src: string; width: number; height: number };
+type TestimonialItem = {
+  type: "image" | "video";
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+};
 
 const testimonials: TestimonialItem[] = [
+  {
+    type: "image",
+    src: "/Images/testimonial-suleiman-top-1-percent.jpg",
+    width: 737,
+    height: 1080,
+    alt: "Suleiman awarded as Top 1% of YouTube scriptwriters in 2025",
+    caption: "Suleiman, awarded Top 1% of YouTube scriptwriters in 2025.",
+  },
+  {
+    type: "image",
+    src: "/Images/testimonial-skill-changed-my-life-1.jpg",
+    width: 1075,
+    height: 1443,
+    alt: "Student testimonial: this skill changed my life",
+    caption: "This student says the skill completely changed her life.",
+  },
+  {
+    type: "image",
+    src: "/Images/testimonial-skill-changed-my-life-2.jpg",
+    width: 1080,
+    height: 1299,
+    alt: "Student testimonial: this skill changed my life",
+    caption: "Another student on how this skill changed everything for him.",
+  },
   {
     type: "image",
     src: "/Images/testimonial-1m-payment.jpg",
     width: 903,
     height: 889,
     alt: "Student testimonial: ₦1m payment received for a month of work",
+    caption: "A student paid ₦1,000,000 for a single month of scriptwriting work.",
   },
   {
     type: "image",
@@ -20,12 +50,7 @@ const testimonials: TestimonialItem[] = [
     width: 1080,
     height: 2460,
     alt: "Student testimonial: ₦500k part-payment for a scriptwriting job",
-  },
-  {
-    type: "video",
-    src: "/Videos/enobasi-testimonial.mp4",
-    width: 1080,
-    height: 1920,
+    caption: "₦500k part-payment received for a scriptwriting job, more to come.",
   },
   {
     type: "image",
@@ -33,6 +58,7 @@ const testimonials: TestimonialItem[] = [
     width: 1080,
     height: 902,
     alt: "Student testimonial: $600 payment plus a $50 bonus from a client",
+    caption: "$600 payment plus a $50 bonus from a happy international client.",
   },
   {
     type: "image",
@@ -40,6 +66,7 @@ const testimonials: TestimonialItem[] = [
     width: 540,
     height: 1230,
     alt: "Student testimonial: ₦800k payment for a script",
+    caption: "₦800k payment received for a single script.",
   },
   {
     type: "image",
@@ -47,6 +74,7 @@ const testimonials: TestimonialItem[] = [
     width: 499,
     height: 1080,
     alt: "Genesis being recommended by a client, going on to earn thousands of dollars",
+    caption: "Genesis, recommended by a client, went on to earn thousands of dollars.",
   },
   {
     type: "image",
@@ -54,6 +82,7 @@ const testimonials: TestimonialItem[] = [
     width: 540,
     height: 1230,
     alt: "Real payment received by a scriptwriting client",
+    caption: "Cyrus receiving a real payment from one of his scriptwriting clients.",
   },
   {
     type: "image",
@@ -61,6 +90,7 @@ const testimonials: TestimonialItem[] = [
     width: 499,
     height: 1080,
     alt: "A client asking for recommendations for more scriptwriters",
+    caption: "A client asking for more recommended scriptwriters after a great experience.",
   },
   {
     type: "image",
@@ -68,12 +98,15 @@ const testimonials: TestimonialItem[] = [
     width: 708,
     height: 1080,
     alt: "Helping to review a script written by a student",
+    caption: "Reviewing and polishing a student's script before it's delivered to the client.",
   },
   {
     type: "video",
-    src: "/Videos/oge-testimonial.mp4",
+    src: "/Videos/genesis-testimonial.mp4",
     width: 720,
-    height: 1280,
+    height: 1248,
+    alt: "Genesis video testimonial",
+    caption: "Genesis shares how he went from $1k to $2k monthly as a scriptwriter.",
   },
 ];
 
@@ -91,64 +124,69 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
   return (
     <div
       aria-hidden={hidden}
-      className="relative w-[92%] max-w-sm h-auto sm:w-auto sm:max-w-none sm:h-[26rem] md:h-[32rem] lg:h-[36rem] shrink-0 rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950"
+      className="shrink-0 w-[92%] max-w-sm sm:w-auto sm:max-w-none flex flex-col items-center sm:items-start gap-2"
     >
-      {item.type === "video" ? (
-        <>
-          <video
-            ref={videoRef}
+      <div className="relative w-full h-auto sm:w-auto sm:h-[26rem] md:h-[32rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950">
+        {item.type === "video" ? (
+          <>
+            <video
+              ref={videoRef}
+              src={item.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto sm:w-auto sm:h-full object-contain"
+            />
+            {!hidden && (
+              <button
+                type="button"
+                onClick={toggleMute}
+                aria-label={muted ? "Unmute video" : "Mute video"}
+                className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm flex items-center justify-center text-white transition-colors"
+              >
+                {muted ? (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M23 9l-6 6M17 9l6 6" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
+                    />
+                  </svg>
+                )}
+              </button>
+            )}
+          </>
+        ) : (
+          <Image
             src={item.src}
-            autoPlay
-            muted
-            loop
-            playsInline
+            alt={item.alt}
+            width={item.width}
+            height={item.height}
             className="w-full h-auto sm:w-auto sm:h-full object-contain"
           />
-          {!hidden && (
-            <button
-              type="button"
-              onClick={toggleMute}
-              aria-label={muted ? "Unmute video" : "Mute video"}
-              className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm flex items-center justify-center text-white transition-colors"
-            >
-              {muted ? (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M23 9l-6 6M17 9l6 6" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
-                  />
-                </svg>
-              )}
-            </button>
-          )}
-        </>
-      ) : (
-        <Image
-          src={item.src}
-          alt={item.alt}
-          width={item.width}
-          height={item.height}
-          className="w-full h-auto sm:w-auto sm:h-full object-contain"
-        />
-      )}
+        )}
+      </div>
+      <p className="text-sm text-neutral-600 text-center sm:text-left max-w-[280px]">
+        {item.caption}
+      </p>
     </div>
   );
 }
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-12 sm:py-20 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-14 reveal">
+        <div className="text-center mb-8 sm:mb-14 reveal">
           <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Student Results
           </span>

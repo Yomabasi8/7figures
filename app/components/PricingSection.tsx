@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-neutral-900">
+    <section id="pricing" className="py-12 sm:py-20 bg-neutral-900">
       <div className="max-w-xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-12 reveal">
+        <div className="text-center mb-8 sm:mb-12 reveal">
           <span className="inline-block bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 border border-amber-400/30">
             🔥 Limited-Time Launch Price
           </span>

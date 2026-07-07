@@ -64,6 +64,9 @@ body {
   .animate-ticker:hover { animation-play-state: paused; }
 }
 
+/* ── Fast announcement-bar ticker (all screen sizes) ── */
+.animate-ticker-fast { animation: ticker 22s linear infinite; }
+
 /* ── Scroll-reveal classes ── */
 .reveal {
   opacity: 0;

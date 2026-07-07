@@ -82,10 +82,10 @@ export default function CourseModules() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="modules" className="py-20 bg-white">
+    <section id="modules" className="py-12 sm:py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-14 reveal">
+        <div className="text-center mb-8 sm:mb-14 reveal">
           <span className="inline-block bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Course Curriculum
           </span>
@@ -93,8 +93,9 @@ export default function CourseModules() {
             6 Modules. One Transformation.
           </h2>
           <p className="text-neutral-600 text-lg max-w-xl mx-auto">
-            Every module is designed to move you, step by step, from where
-            you are right now to signing your first premium client.
+            Every module is designed to move you from where you are right
+            now, to learning a skill that can make you six to seven figures
+            monthly!
           </p>
         </div>
 

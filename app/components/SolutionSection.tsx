@@ -4,12 +4,11 @@ const outcomes = [
   "How to use AI as your Co-writer and 5x your results",
   "Use our direct outreach system to land your first paying client in 30–45 days",
   "Work from your phone or laptop, from anywhere in the world",
-  "Escape low-paying gigs permanently and command what you&apos;re truly worth",
 ];
 
 export default function SolutionSection() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-12 sm:py-20 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}
@@ -23,9 +22,10 @@ export default function SolutionSection() {
               Scriptwriting Masterclass
             </h2>
             <p className="text-neutral-600 text-lg mb-8 leading-relaxed">
-              A step-by-step training program that transforms your writing
-              skills into a high-income digital business — without showing your
-              face, building an audience, or learning complex technology.
+              A step-by-step training program that takes you from little or
+              zero writing experience into a highly skilled scriptwriter,
+              earning 6-7 figures, without showing your face, building an
+              audience, or learning complex technology.
             </p>
             <ul className="space-y-3">
               {outcomes.map((o, i) => (

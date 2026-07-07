@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function OpportunitySection() {
   return (
-    <section className="py-20 bg-red-50 relative overflow-hidden">
+    <section className="py-12 sm:py-20 bg-red-50 relative overflow-hidden">
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-[0.5] pointer-events-none"
