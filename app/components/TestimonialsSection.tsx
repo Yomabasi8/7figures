@@ -79,7 +79,7 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
   return (
     <div
       aria-hidden={hidden}
-      className="h-64 sm:h-80 shrink-0 rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950"
+      className="w-[92%] max-w-sm h-auto sm:w-auto sm:max-w-none sm:h-64 md:h-80 shrink-0 rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950"
     >
       {item.type === "video" ? (
         <video
@@ -88,7 +88,7 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
           muted
           loop
           playsInline
-          className="h-full w-auto object-contain"
+          className="w-full h-auto sm:w-auto sm:h-full object-contain"
         />
       ) : (
         <Image
@@ -96,7 +96,7 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
           alt={item.alt}
           width={item.width}
           height={item.height}
-          className="h-full w-auto object-contain"
+          className="w-full h-auto sm:w-auto sm:h-full object-contain"
         />
       )}
     </div>
