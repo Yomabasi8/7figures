@@ -104,11 +104,11 @@ export default function HeroSection() {
         <div className="animate-fade-up delay-600 mt-10 max-w-7xl mx-auto text-center">
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 sm:gap-8">
             <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-none">
-              <p className="text-neutral-400 text-sm mb-3">
+              <p className="text-neutral-400 text-sm mb-3 sm:max-w-[220px]">
                 Testimonial screenshot of this student who made ₦120k in two
                 weeks, starting as an absolute beginner.
               </p>
-              <div className="h-auto sm:h-72 md:h-80 lg:h-[26rem] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+              <div className="w-full sm:w-fit h-auto sm:h-96 md:h-[30rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
                 <Image
                   src="/Images/student-120k-2-weeks.jpg"
                   alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
@@ -122,7 +122,7 @@ export default function HeroSection() {
               <p className="text-neutral-400 text-sm mb-3">
                 Another student, Cyrus, made ₦1.5m in one month.
               </p>
-              <div className="h-auto sm:h-72 md:h-80 lg:h-[26rem] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+              <div className="w-full sm:w-fit h-auto sm:h-48 md:h-56 lg:h-64 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
                 <Image
                   src="/Images/student-1.5m-cyrus.jpg"
                   alt="Student testimonial screenshot: Cyrus's student receiving ₦1.5m in scriptwriting income"
