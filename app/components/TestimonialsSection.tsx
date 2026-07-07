@@ -122,6 +122,7 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
               src={item.src}
               muted
               playsInline
+              preload="metadata"
               className="w-full h-auto sm:w-auto sm:h-full object-contain"
             />
           ) : (

@@ -52,14 +52,17 @@ export default function HeroSection() {
             Business.
           </p>
 
-          {/* Video */}
-          <div className="animate-fade-up delay-300 mb-8 max-w-md mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
-            <VideoWithPlayButton
-              src="/Videos/hero-testimonial.mp4"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        </div>
 
+        {/* Video — own wider container so it can grow past the text column on desktop */}
+        <div className="animate-fade-up delay-300 mb-8 max-w-md sm:max-w-2xl lg:max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+          <VideoWithPlayButton
+            src="/Videos/hero-testimonial.mp4"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="max-w-3xl mx-auto text-center">
           {/* Price + CTA */}
           <div id="hero-cta" className="animate-fade-up delay-500">
             <div className="flex items-center justify-center gap-3 mb-3">

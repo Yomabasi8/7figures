@@ -23,6 +23,7 @@ export default function VideoWithPlayButton({
         controls={playing}
         playsInline
         loop
+        preload="metadata"
         className={className}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
