@@ -22,14 +22,6 @@ const testimonials: TestimonialItem[] = [
   },
   {
     type: "image",
-    src: "/Images/testimonial-skill-changed-my-life-1.jpg",
-    width: 1075,
-    height: 1443,
-    alt: "Student testimonial: this skill changed my life",
-    caption: "This student says the skill completely changed her life.",
-  },
-  {
-    type: "image",
     src: "/Images/testimonial-skill-changed-my-life-2.jpg",
     width: 1080,
     height: 1299,
@@ -106,7 +98,7 @@ const testimonials: TestimonialItem[] = [
     width: 720,
     height: 1248,
     alt: "Genesis video testimonial",
-    caption: "Genesis shares how she went from $1k to $2k monthly as a scriptwriter.",
+    caption: "Genesis shares how she makes 1k - 2k dollars monthly.",
     poster: "/Images/genesis-testimonial-poster.jpg",
   },
 ];
