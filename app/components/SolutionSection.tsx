@@ -1,6 +1,7 @@
 const outcomes = [
   "Master the exact script structure that makes YouTube creators pay premium rates",
   "Build a compelling portfolio that attracts international clients",
+  "How to use AI as your Co-writer and 5x your results",
   "Use our direct outreach system to land your first paying client in 30–45 days",
   "Work from your phone or laptop, from anywhere in the world",
   "Escape low-paying gigs permanently and command what you&apos;re truly worth",
