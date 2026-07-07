@@ -1,4 +1,5 @@
 import Image from "next/image";
+import VideoWithPlayButton from "./VideoWithPlayButton";
 
 export default function HeroSection() {
   return (
@@ -51,23 +52,12 @@ export default function HeroSection() {
             Business.
           </p>
 
-          {/* Video placeholder */}
-          <div className="animate-fade-up delay-300 mb-8 max-w-md mx-auto aspect-video bg-white/5 rounded-2xl border-2 border-dashed border-white/20 flex flex-col items-center justify-center gap-2 text-neutral-400">
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span className="text-sm font-medium">Video coming soon</span>
+          {/* Video */}
+          <div className="animate-fade-up delay-300 mb-8 max-w-md mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+            <VideoWithPlayButton
+              src="/Videos/hero-testimonial.mp4"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Price + CTA */}
@@ -108,28 +98,35 @@ export default function HeroSection() {
 
         {/* Testimonial screenshots — own wider container so they can grow past the text column */}
         <div className="animate-fade-up delay-600 mt-10 max-w-7xl mx-auto text-center">
-          <p className="text-neutral-400 text-sm mb-3">
-            Testimonial screenshot of this student who made ₦120k in two
-            weeks, starting as an absolute beginner.
-          </p>
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 sm:gap-8">
-            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-[380px] md:max-w-[460px] lg:max-w-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
-              <Image
-                src="/Images/student-120k-2-weeks.jpg"
-                alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
-                width={499}
-                height={1080}
-                className="w-full h-auto"
-              />
+            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-none">
+              <p className="text-neutral-400 text-sm mb-3">
+                Testimonial screenshot of this student who made ₦120k in two
+                weeks, starting as an absolute beginner.
+              </p>
+              <div className="h-auto sm:h-72 md:h-80 lg:h-[26rem] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+                <Image
+                  src="/Images/student-120k-2-weeks.jpg"
+                  alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
+                  width={499}
+                  height={1080}
+                  className="w-full h-auto sm:w-auto sm:h-full object-contain"
+                />
+              </div>
             </div>
-            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-[380px] md:max-w-[460px] lg:max-w-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
-              <Image
-                src="/Images/student-1.5m-cyrus.jpg"
-                alt="Student testimonial screenshot: Cyrus's student receiving ₦1.5m in scriptwriting income"
-                width={571}
-                height={297}
-                className="w-full h-auto"
-              />
+            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-none">
+              <p className="text-neutral-400 text-sm mb-3">
+                Another student, Cyrus, made ₦1.5m in one month.
+              </p>
+              <div className="h-auto sm:h-72 md:h-80 lg:h-[26rem] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+                <Image
+                  src="/Images/student-1.5m-cyrus.jpg"
+                  alt="Student testimonial screenshot: Cyrus's student receiving ₦1.5m in scriptwriting income"
+                  width={571}
+                  height={297}
+                  className="w-full h-auto sm:w-auto sm:h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>

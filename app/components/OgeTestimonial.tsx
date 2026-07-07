@@ -1,3 +1,5 @@
+import VideoWithPlayButton from "./VideoWithPlayButton";
+
 export default function OgeTestimonial() {
   return (
     <section className="relative py-14 sm:py-24 bg-neutral-950 overflow-hidden">
@@ -39,11 +41,8 @@ export default function OgeTestimonial() {
         {/* Video */}
         <div className="reveal-scale relative mt-10 max-w-md mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black ring-1 ring-red-500/30">
-            <video
+            <VideoWithPlayButton
               src="/Videos/oge-testimonial.mp4"
-              controls
-              playsInline
-              preload="metadata"
               className="w-full h-auto aspect-[9/16] bg-black"
             />
           </div>

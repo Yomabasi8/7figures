@@ -1,6 +1,5 @@
-"use client";
-import { useRef, useState } from "react";
 import Image from "next/image";
+import VideoWithPlayButton from "./VideoWithPlayButton";
 
 type TestimonialItem = {
   type: "image" | "video";
@@ -42,7 +41,7 @@ const testimonials: TestimonialItem[] = [
     width: 903,
     height: 889,
     alt: "Student testimonial: ₦1m payment received for a month of work",
-    caption: "A student paid ₦1,000,000 for a single month of scriptwriting work.",
+    caption: "A student got paid ₦1M for a single month of scriptwriting work.",
   },
   {
     type: "image",
@@ -106,21 +105,11 @@ const testimonials: TestimonialItem[] = [
     width: 720,
     height: 1248,
     alt: "Genesis video testimonial",
-    caption: "Genesis shares how he went from $1k to $2k monthly as a scriptwriter.",
+    caption: "Genesis shares how she went from $1k to $2k monthly as a scriptwriter.",
   },
 ];
 
 function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boolean }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-
-  const toggleMute = () => {
-    const el = videoRef.current;
-    if (!el) return;
-    el.muted = !el.muted;
-    setMuted(el.muted);
-  };
-
   return (
     <div
       aria-hidden={hidden}
@@ -128,42 +117,19 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
     >
       <div className="relative w-full h-auto sm:w-auto sm:h-[26rem] md:h-[32rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950">
         {item.type === "video" ? (
-          <>
+          hidden ? (
             <video
-              ref={videoRef}
               src={item.src}
-              autoPlay
               muted
-              loop
               playsInline
               className="w-full h-auto sm:w-auto sm:h-full object-contain"
             />
-            {!hidden && (
-              <button
-                type="button"
-                onClick={toggleMute}
-                aria-label={muted ? "Unmute video" : "Mute video"}
-                className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm flex items-center justify-center text-white transition-colors"
-              >
-                {muted ? (
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M23 9l-6 6M17 9l6 6" />
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
-                    />
-                  </svg>
-                )}
-              </button>
-            )}
-          </>
+          ) : (
+            <VideoWithPlayButton
+              src={item.src}
+              className="w-full h-auto sm:w-auto sm:h-full object-contain"
+            />
+          )
         ) : (
           <Image
             src={item.src}

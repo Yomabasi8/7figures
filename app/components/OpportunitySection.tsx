@@ -59,7 +59,7 @@ export default function OpportunitySection() {
 
           {/* Right: testimonial image */}
           <div className="reveal-right flex justify-center">
-            <div className="w-full max-w-[260px] rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100">
+            <div className="w-[92%] max-w-sm lg:max-w-[260px] rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100">
               <Image
                 src="/Images/cyrus-dogo-payment-screenshot.jpg"
                 alt="Real payment received by a scriptwriting client"
