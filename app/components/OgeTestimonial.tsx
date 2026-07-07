@@ -43,6 +43,7 @@ export default function OgeTestimonial() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black ring-1 ring-red-500/30">
             <VideoWithPlayButton
               src="/Videos/oge-testimonial.mp4"
+              poster="/Images/oge-testimonial-poster.jpg"
               className="w-full h-auto aspect-[9/16] bg-black"
             />
           </div>

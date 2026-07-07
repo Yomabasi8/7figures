@@ -3,9 +3,11 @@ import { useRef, useState } from "react";
 
 export default function VideoWithPlayButton({
   src,
+  poster,
   className,
 }: {
   src: string;
+  poster?: string;
   className?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -20,10 +22,11 @@ export default function VideoWithPlayButton({
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         controls={playing}
         playsInline
         loop
-        preload="metadata"
+        preload="none"
         className={className}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}

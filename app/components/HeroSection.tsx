@@ -58,6 +58,7 @@ export default function HeroSection() {
         <div className="animate-fade-up delay-300 mb-8 max-w-md sm:max-w-2xl lg:max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
           <VideoWithPlayButton
             src="/Videos/hero-testimonial.mp4"
+            poster="/Images/hero-testimonial-poster.jpg"
             className="w-full h-full object-cover"
           />
         </div>

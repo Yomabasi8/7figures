@@ -8,6 +8,7 @@ type TestimonialItem = {
   height: number;
   alt: string;
   caption: string;
+  poster?: string;
 };
 
 const testimonials: TestimonialItem[] = [
@@ -106,6 +107,7 @@ const testimonials: TestimonialItem[] = [
     height: 1248,
     alt: "Genesis video testimonial",
     caption: "Genesis shares how she went from $1k to $2k monthly as a scriptwriter.",
+    poster: "/Images/genesis-testimonial-poster.jpg",
   },
 ];
 
@@ -120,14 +122,16 @@ function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boo
           hidden ? (
             <video
               src={item.src}
+              poster={item.poster}
               muted
               playsInline
-              preload="metadata"
+              preload="none"
               className="w-full h-auto sm:w-auto sm:h-full object-contain"
             />
           ) : (
             <VideoWithPlayButton
               src={item.src}
+              poster={item.poster}
               className="w-full h-auto sm:w-auto sm:h-full object-contain"
             />
           )

@@ -63,6 +63,7 @@ export default function SolutionSection() {
             <div className="relative w-[92%] max-w-sm lg:max-w-[280px] aspect-[9/16] rounded-3xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-black">
               <VideoWithPlayButton
                 src="/Videos/enobasi-testimonial.mp4"
+                poster="/Images/enobasi-testimonial-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
