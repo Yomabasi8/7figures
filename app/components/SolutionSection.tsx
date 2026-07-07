@@ -57,7 +57,7 @@ export default function SolutionSection() {
               went from <span className="text-red-600">zero to 3M</span> in{" "}
               <span className="text-red-600">7 months</span> as a student.
             </p>
-            <div className="relative w-full max-w-[280px] aspect-[9/16] rounded-3xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-black">
+            <div className="relative w-[92%] max-w-sm lg:max-w-[280px] aspect-[9/16] rounded-3xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-black">
               <video
                 src="/Videos/enobasi-testimonial.mp4"
                 controls

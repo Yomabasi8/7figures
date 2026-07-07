@@ -1,3 +1,5 @@
+"use client";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 type TestimonialItem =
@@ -76,20 +78,58 @@ const testimonials: TestimonialItem[] = [
 ];
 
 function TestimonialCard({ item, hidden }: { item: TestimonialItem; hidden?: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = !el.muted;
+    setMuted(el.muted);
+  };
+
   return (
     <div
       aria-hidden={hidden}
-      className="w-[92%] max-w-sm h-auto sm:w-auto sm:max-w-none sm:h-64 md:h-80 shrink-0 rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950"
+      className="relative w-[92%] max-w-sm h-auto sm:w-auto sm:max-w-none sm:h-[26rem] md:h-[32rem] lg:h-[36rem] shrink-0 rounded-2xl overflow-hidden shadow-xl shadow-red-100 ring-1 ring-red-100 bg-neutral-950"
     >
       {item.type === "video" ? (
-        <video
-          src={item.src}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-auto sm:w-auto sm:h-full object-contain"
-        />
+        <>
+          <video
+            ref={videoRef}
+            src={item.src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-auto sm:w-auto sm:h-full object-contain"
+          />
+          {!hidden && (
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={muted ? "Unmute video" : "Mute video"}
+              className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm flex items-center justify-center text-white transition-colors"
+            >
+              {muted ? (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M23 9l-6 6M17 9l6 6" />
+                </svg>
+              ) : (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
+                  />
+                </svg>
+              )}
+            </button>
+          )}
+        </>
       ) : (
         <Image
           src={item.src}
@@ -124,7 +164,7 @@ export default function TestimonialsSection() {
 
       {/* Testimonial strip: static vertical stack on mobile, infinite scrolling marquee from sm up */}
       <div className="reveal">
-        <div className="flex flex-col items-center sm:items-start sm:flex-row w-full sm:w-max gap-6 px-4 sm:px-6 sm:animate-ticker">
+        <div className="animate-ticker flex flex-col items-center sm:items-start sm:flex-row w-full sm:w-max gap-6 sm:gap-10 px-4 sm:px-6">
           {testimonials.map((item, i) => (
             <TestimonialCard key={`a-${i}`} item={item} />
           ))}

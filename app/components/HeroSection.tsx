@@ -104,32 +104,32 @@ export default function HeroSection() {
               </svg>
             </a>
           </div>
+        </div>
 
-          {/* Testimonial screenshots */}
-          <div className="animate-fade-up delay-600 mt-10">
-            <p className="text-neutral-400 text-sm mb-3">
-              Testimonial screenshot of this student who made ₦120k in two
-              weeks, starting as an absolute beginner.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 sm:gap-5">
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[240px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
-                <Image
-                  src="/Images/student-120k-2-weeks.jpg"
-                  alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
-                  width={499}
-                  height={1080}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20 max-w-[240px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
-                <Image
-                  src="/Images/student-150k-2-weeks.jpg"
-                  alt="Student testimonial screenshot: ₦150k earned in two weeks"
-                  width={803}
-                  height={1080}
-                  className="w-full h-auto"
-                />
-              </div>
+        {/* Testimonial screenshots — own wider container so they can grow past the text column */}
+        <div className="animate-fade-up delay-600 mt-10 max-w-7xl mx-auto text-center">
+          <p className="text-neutral-400 text-sm mb-3">
+            Testimonial screenshot of this student who made ₦120k in two
+            weeks, starting as an absolute beginner.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 sm:gap-8">
+            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-[380px] md:max-w-[460px] lg:max-w-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+              <Image
+                src="/Images/student-120k-2-weeks.jpg"
+                alt="Student testimonial screenshot: ₦120k earned in two weeks as a beginner"
+                width={499}
+                height={1080}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="w-[92%] sm:w-auto max-w-sm sm:max-w-[380px] md:max-w-[460px] lg:max-w-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-2 ring-white/20">
+              <Image
+                src="/Images/student-150k-2-weeks.jpg"
+                alt="Student testimonial screenshot: ₦150k earned in two weeks"
+                width={803}
+                height={1080}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
