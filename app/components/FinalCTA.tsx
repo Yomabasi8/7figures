@@ -39,7 +39,7 @@ export default function FinalCTA() {
           </p>
 
           <a
-            href="#pricing"
+            href="https://nestuge.com/youtubescriptwritingmasterclass"
             className="pulse-cta inline-flex items-center gap-3 bg-white text-red-700 font-extrabold text-lg px-12 py-5 rounded-full transition-all duration-200 hover:bg-red-50 hover:scale-105 hover:shadow-2xl group mb-5"
           >
             YES! GET ACCESS NOW FOR ₦17,999

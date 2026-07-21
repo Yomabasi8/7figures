@@ -40,7 +40,7 @@ export default function StickyCTA() {
           <span className="text-white/40 text-sm line-through">₦40,000</span>
         </div>
         <a
-          href="#pricing"
+          href="https://nestuge.com/youtubescriptwritingmasterclass"
           className="shrink-0 inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-extrabold text-sm sm:text-base px-5 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-200 hover:scale-105"
         >
           GET ACCESS NOW

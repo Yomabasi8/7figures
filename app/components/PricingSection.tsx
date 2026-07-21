@@ -34,7 +34,7 @@ export default function PricingSection() {
         {/* CTA */}
         <div className="reveal mt-8 text-center">
           <a
-            href="#"
+            href="https://nestuge.com/youtubescriptwritingmasterclass"
             className="pulse-cta inline-flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white font-extrabold text-lg px-10 py-5 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-2xl hover:shadow-red-600/40 group"
           >
             GET ACCESS NOW — ₦17,999
